@@ -53,6 +53,13 @@ The drone just ignores them.
 * Tello drones auto-land if no commands are received within 15 seconds.
 The driver sends a `rc 0 0 0 0` command after 12 seconds of silence to avoid this.
 
+Use [rosbag2video](https://github.com/mlaiacker/rosbag2video/tree/foxy) to pass image_raw topic to images sequence. 
+~~~
+python3 ros2bag2video.py --fps 30 --rate 1.0 -o <output-name> -v --topic /image_raw <ros2bag-name>
+~~~
+
+TO-DO: Develop Position Controller
+
 ### Services
 
 * `~tello_action` tello_msgs/TelloAction
@@ -93,15 +100,15 @@ sudo apt install libasio-dev
 
 ### 2. Set up your ROS environment
 
-[Install ROS2 Foxy](https://docs.ros.org/) with the `ros-foxy-desktop` option.
+[Install ROS2 Galactic](https://docs.ros.org/) with the `ros-galactic-desktop` option.
 
 If you install binaries, be sure to also install the 
-[development tools and ROS tools](https://docs.ros.org/en/foxy/Installation/Ubuntu-Development-Setup.html)
+[development tools and ROS tools](https://docs.ros.org/en/galactic/Installation/Ubuntu-Development-Setup.html)
 from the source installation instructions.
 
 Install these additional packages:
 ~~~
-sudo apt install ros-foxy-cv-bridge ros-foxy-camera-calibration-parsers
+sudo apt install ros-galactic-cv-bridge ros-galactic-camera-calibration-parsers
 ~~~
 
 ### 3. Install `tello_ros`

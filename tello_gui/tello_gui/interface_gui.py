@@ -101,7 +101,7 @@ class MainWindow(QMainWindow):
 		uic.loadUi('main.ui', self)
 
 		self.setWindowIcon(QtGui.QIcon(":/figs/LogoRoboticPark.png"))
-		self.setWindowTitle("Robotic Park. Khepera IV")
+		self.setWindowTitle("Robotic Park. DJI Tello EDU")
 
 		
 		self.steer = RQT_Panel("rqt_robot_steering")

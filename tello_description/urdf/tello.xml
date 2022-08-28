@@ -110,6 +110,19 @@
         </plugin>
     </gazebo>
 
+    <gazebo>
+      <plugin name="ground_truth" filename="libgazebo_ros_p3d.so">
+          <ros>
+              <namespace>tello${suffix}</namespace>
+              <remapping>odom:=ground_truth</remapping>
+          </ros>
+          <frame_name>map</frame_name>
+          <body_name>base_link${suffix}</body_name>
+          <update_rate>100.0</update_rate>
+          <gaussian_noise>0.01</gaussian_noise>
+      </plugin>
+    </gazebo>
+
     <!-- Camera plugin for Gazebo -->
     <!-- TODO use Tello camera specs -->
     <!-- TODO add another joint and rotate the camera into place -->
